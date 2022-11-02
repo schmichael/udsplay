@@ -1,7 +1,7 @@
 # udsplay
 playground
 
-# results
+# linux results
 
 - Unix sockets are removed when the creating process exits *cleanly*
 - Unix sockets can be symlinked
