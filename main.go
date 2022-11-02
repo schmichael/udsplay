@@ -45,6 +45,8 @@ func listen(fn string) error {
 		return err
 	}
 
+	log.Printf("listening on %s (%T)", usdln.Addr(), usdln)
+
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
 
@@ -99,6 +101,7 @@ func connect(fn string) error {
 	if err != nil {
 		return err
 	}
+	log.Printf("connected to %s (%T)", conn.RemoteAddr(), conn)
 
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
